@@ -1,0 +1,52 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f0fb;
+  color: #4a148c;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #e1bee7;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3em;
+  margin: 0;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+}
+
+.project-item {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.project-item h2 {
+  margin-top: 0;
+}
+
+.view-project-btn {
+  display: inline-block;
+  margin-top: 20px;
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: #f3e5f5;
+  font-size: 0.9em;
+}
