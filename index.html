@@ -6,6 +6,66 @@
     <title>Vanny Minanda - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+       .achievements {
+      padding: 40px;
+      background-color: #f3e5f5;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      color: #4a148c;
+    }
+
+    .certificate-card {
+      display: flex;
+      margin-bottom: 30px;
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .certificate-image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 20px;
+    }
+
+    .certificate-info {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .certificate-info h3 {
+      font-size: 1.8em;
+      margin-top: 0;
+      color: #4a148c;
+    }
+
+    .certificate-info p {
+      font-size: 1em;
+      color: #333;
+      margin: 5px 0;
+    }
+
+    .view-certificate-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #ff6f61;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .view-certificate-btn:hover {
+      background-color: #ff3d2d;
+    }
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
@@ -495,27 +555,41 @@
             </div>
         </section>
 
-        <section id="projects">
-            <h2>Achievement</h2>
-            <div class="project-item">
-                <h3>Gold Academic Award: </h3>
-                <p>Gold Award for Academic Achievements</p>
-                <img src="https://avatars.githubusercontent.com/u/58935440?v=4" alt="Profile Picture" style="width: 300px; height: 300px; border: 5px solid #ff80ab; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
-                
-            </div>
-            <div class="project-item">
-                <h3>Dissertation Competition:</h3>
-                <p>I won the First Place in Dissertation Competition (IEOM 2024, Australia)</p>
-                <img src="https://avatars.githubusercontent.com/u/58935440?v=4" alt="Profile Picture" style="width: 300px; height: 300px; border: 5px solid #ff80ab; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
+  <section class="achievements">
+    <h2>Certificates of Achievement</h2>
+    
+    <div class="certificate-card">
+      <img src="certificate-image.jpg" alt="Certificate Image" class="certificate-image">
+      <div class="certificate-info">
+        <h3>Gold Academic Award</h3>
+        <p><strong>Issuing Organization:</strong> Yuan Ze University</p>
+        <p><strong>Date:</strong> 2025</p>
+        <p>Gold Award for Academic Achievements</p>
+        <a href="https://github.com/vannyminanda888/my_webpage/dissertation.pdf" class="view-certificate-btn">View Certificate</a>
+      </div>
+    </div>
 
-            </div>
-            <div class="project-item">
-                <h3>Phi Tau Phi Honorary Membership Taiwan:</h3>
-                <p>The 114 Phi Tau Phi Honorary Membership Taiwan in the recognition of outstanding academic performance and achievements</p>
-                <img src="https://avatars.githubusercontent.com/u/58935440?v=4" alt="Profile Picture" style="width: 300px; height: 300px; border: 5px solid #ff80ab; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
+    <div class="certificate-card">
+      <img src="certificate-image.jpg" alt="Certificate Image" class="certificate-image">
+      <div class="certificate-info">
+        <h3>Dissertation Competition</h3>
+        <p><strong>Issuing Organization:</strong> Industrial Engineering and Operations Management Society</p>
+        <p><strong>Date:</strong> September 2024</p>
+        <p>First Place in Dissertation Competition in IEOM 2024, Sydney Australia</p>
+        <a href="https://github.com/vannyminanda888/my_webpage/dissertation.pdf" class="view-certificate-btn">View Certificate</a>
+      </div>
+    </div>
 
-            </div>
-        </section>
+    <div class="certificate-card">
+      <img src="certificate-image.jpg" alt="Certificate Image" class="certificate-image">
+      <div class="certificate-info">
+        <h3>Phi Tau Phi Honorary Membership</h3>
+        <p><strong>Issuing Organization:</strong> Phi Tau Phi Society</p>
+        <p><strong>Date:</strong> 2024</p>
+        <p>The 114 Phi Tau Phi Honorary Membership Taiwan in the recognition of outstanding academic performance and achievements</p>
+        <a href="https://github.com/vannyminanda888/my_webpage/dissertation.pdf" class="view-certificate-btn">View Certificate</a>
+      </div>
+    </div>
         
         <section id="skills">
             <h2>Skills</h2>
