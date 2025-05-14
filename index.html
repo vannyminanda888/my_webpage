@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanny Minanda - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f0fb;
+            color: #4a148c;
+            line-height: 1.7;
+        }
+        header {
+            background-color: #d1c4e9; /* Adjusted header color */
+            color: #212121;
+            padding: 150px 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(https://images.unsplash.com/photo-1542485399-585c4617666d?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        header h1 {
+            font-size: 6em;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 0.3s, snowFall 10s linear infinite, pulse 2s infinite alternate;
+            position: relative;
+            z-index: 1;
+        }
+        header p {
+            font-size: 2em;
+            font-weight: 500;
+            margin-bottom: 0; /* Removed default margin-bottom */
+            color: #444;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 0.6s, snowFall 10s linear infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px; /* Added margin to separate from the paragraph */
+            position: relative; /* Ensure nav is positioned correctly */
+            z-index: 2;
+            align-self: center; /* Centers the nav horizontally */
+        }
+
+        header nav a {
+            color: #4a148c;
+            text-decoration: none;
+            font-size: 1.4em;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 8px 16px; /* Added padding for better link appearance */
+            border-radius: 10px; /* Added border-radius for a rounded look */
+            background-color: rgba(255, 255, 255, 0.7); /* Added a background color */
+            backdrop-filter: blur(5px);
+        }
+
+        header nav a:hover {
+            color: #311b92;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes snowFall {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(800px);
+            }
+        }
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.06);
+            }
+        }
+        main {
+            padding: 120px 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        section {
+            margin-bottom: 150px;
+        }
+        section h2 {
+            font-size: 4em;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #4a148c;
+            margin-bottom: 80px;
+            text-align: center;
+            letter-spacing: -0.02em;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        #projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+        }
+        #projects .project-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+        #projects .project-item:hover {
+            transform: translateY(-10px) scale(1.04);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+        }
+        #projects .project-item h3 {
+            font-size: 2.2em;
+            font-family: 'Montserrat', sans-serif;
+            color: #4a148c;
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        #projects .project-item p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+        #projects .project-item a {
+            color: #ff6f61;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #projects .project-item a:hover {
+            color: #e53e3e;
+            transform: translateX(5px);
+        }
+        #about {
+            display: grid;
+            grid-template-columns:  1fr 1fr; /* Adjusted grid columns */
+            gap: 100px;
+            align-items: center;
+        }
+        #about div {
+            padding: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        #about img {
+            width: 110%; /* Increased image size */
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        #about img:hover {
+            transform: scale(1.08);
+        }
+        #about p {
+            font-size: 1.3em;
+            line-height: 2;
+            color: #555;
+        }
+        #skills {
+            margin-top: 120px;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        #skills h2 {
+            margin-bottom: 120px;
+        }
+        #skills ul {
+            list-style: none;
+            padding-left: 0;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-around;
+        }
+        #skills ul li {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.8em;
+            font-family: 'Montserrat', sans-serif;
+            color: #2c3e50;
+            font-weight: 600;
+            width: 300px;
+            backdrop-filter: blur(10px);
+            animation: pulse 2s infinite alternate;
+        }
+        #skills ul li:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+        }
+        #contact {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 100px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+        #contact h2 {
+            margin-bottom: 120px;
+        }
+        #contact p {
+            font-size: 1.5em;
+            color: #666;
+            margin-bottom: 60px;
+        }
+        #contact form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: none;
+            margin: 0 auto;
+        }
+        #contact form label {
+            margin-bottom: 15px;
+            color: #444;
+            font-weight: 600;
+            font-size: 1.2em;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        #contact form label:hover {
+            color: #2c3e50;
+        }
+        #contact form input,
+        #contact form textarea {
+            padding: 20px;
+            margin-bottom: 0;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.2em;
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(5px);
+        }
+        #contact form input:focus,
+        #contact form textarea:focus {
+            outline: none;
+            border-color: #ff6f61;
+            box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+        }
+        #contact form textarea {
+            resize: none;
+            height: 200px;
+            grid-column: 1 / 3;
+        }
+        #contact form button {
+            background: linear-gradient(to right, #ff6b81, #ff7f50);
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.5em;
+            transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+            width: fit-content;
+            align-self: center;
+            margin-top: 50px;
+            grid-column: 1 / 3;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            animation: pulse 2s infinite alternate;
+        }
+        #contact form button:hover {
+            background: linear-gradient(to right, #ff4757, #ff5e56);
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+            margin-top: 150px;
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+        }
+        @media (max-width: 768px) {
+            #about {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            #about img {
+                width: 100%;
+                margin: 0 auto 60px auto;
+            }
+            #skills ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            #skills ul li {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            #contact form {
+                grid-template-columns: 1fr;
+            }
+            #contact form textarea {
+                grid-column: 1 / 1;
+            }
+            #contact form button {
+                grid-column: 1 / 1;
+                align-self: center;
+            }
+            header h1 {
+                font-size: 5em;
+            }
+            header p {
+                font-size: 1.6em;
+            }
+            section h2 {
+                font-size: 3em;
+            }
+            #projects {
+                grid-template-columns: 1fr;
+            }
+            #projects .project-item {
+                margin-bottom: 60px;
+            }
+        }
+        /* Updated Color Palette */
+        body {
+            background-color: #f8f0fb;
+            color: #4a148c;
+        }
+        header {
+            background-color: #d1c4e9;
+            color: #212121;
+        }
+        header::before {
+            opacity: 0.3;
+        }
+        section h2 {
+            color: #4a148c;
+        }
+        #projects .project-item {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        #projects .project-item h3 {
+            color: #4a148c;
+        }
+        #projects .project-item a {
+            color: #ff6f61;
+        }
+        #projects .project-item a:hover {
+            color: #e53e3e;
+        }
+        #skills ul li {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #4a148c;
+        }
+        #contact {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        #contact form label {
+            color: #311b92;
+        }
+        #contact form label:hover {
+            color: #4a148c;
+        }
+        footer {
+            background-color: #311b92;
+        }
+        a {
+            color: #f50057;
+        }
+        a:hover {
+            color: #c51162;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Hi, there 👋🏼! </h1>
+        <p>It's me Vanny</p>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Me!</h2>
+            <div style="display: flex;  align-items: center; gap: 50px;">
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                    <nav style="margin-bottom: 20px; display: flex; gap: 15px;">
+                        <a href="#about" style="font-size: 1.5em; font-family: 'Montserrat Alternates', sans-serif; font-weight: 600;">About</a>
+                        <a href="#projects" style="font-size: 1.5em; font-family: 'Montserrat Alternates', sans-serif; font-weight: 600;">Projects</a>
+                        <a href="#skills" style="font-size: 1.5em; font-family: 'Montserrat Alternates', sans-serif; font-weight: 600;">Skills</a>
+                        <a href="#contact" style="font-size: 1.5em; font-family: 'Montserrat Alternates', sans-serif; font-weight: 600;">Contact</a>
+                    </nav>
+                    <img src="https://avatars.githubusercontent.com/u/58935440?v=4" alt="Profile Picture" style="width: 300px; height: 300px; border-radius: 50%; border: 5px solid #ff80ab; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);">
+                    <p>
+                        Hello! I'm a data scientist passionate about turning data into impactful solutions. I specialize in machine learning, NLP, and algorithm optimization. I enjoy building systems that make life easier — from intelligent automation to smart city applications. My background combines engineering principles with real-world data insight to solve problems that matter.
+                    </p>
+                </div>
+                <div style="flex: 1;">
+                    <h2>Vanny Minanda</h2>
+                    <p>
+                        
+                        Ph.D. in Industrial Engineering and Management<br>
+                        Yuan Ze University, Taiwan<br><br>
+                        <a href="https://www.vannyminanda.com" target="_blank" style="color:#f50057;">www.vannyminanda.com</a><br>
+                        <a href="mailto:vminanda@gmail.com" style="color:#f50057;">vminanda@gmail.com</a><br><br>
+                        <a href="https://www.linkedin.com/in/vannyminanda888" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 30px; height: 30px; margin-right: 10px;">
+                        </a>
+                        <a href="https://www.instagram.com/vannyminanda8" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Instagram" style="width: 30px; height: 30px; margin-right: 10px;">
+                        </a>
+                        <a href="https://github.com/vannyminanda888" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/128/1051/1051377.png" alt="Github" style="width: 30px; height: 30px; margin-right: 10px;">
+                        </a>
+                        <br><br>
+                        <button onclick="window.location.href='your_cv_link.pdf'" style="background: linear-gradient(to right, #ff6b81, #ff7f50); color: white; padding: 10px 20px; border: none; border-radius: 12px; cursor: pointer; font-size: 1.2em; transition: background-color 0.3s ease, transform 0.1s ease; margin-top: 10px;">Download CV</button>
+
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <h3>Project 1: </h3>
+                <p>Preliminary Research on the Monitoring and Collection of Medical Waste in Far Eastern Memorial Hospital</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project-item">
+                <h3>Project 2:</h3>
+                <p>Automatic Detection and Collection Routing on Medical Waste.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project-item">
+                <h3>Project 3:</h3>
+                <p> Apparel Demand  Forecasting Software Far Eastern New Century</p>
+                <a href="#">View Project</a>
+            </div>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>Machine Learning</li>
+                <li>Deep Learning</li>
+                <li>NLP</li>
+                <li>Data Analysis</li>
+                <li>Algorithm Optimization</li>
+                <li>Cloud Computing</li>
+                <li>Database Management</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>I'm always eager to collaborate on exciting projects. Feel free to reach out!</p>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 vminanda — All rights reserved</p>
+    </footer>
+</body>
+</html>
